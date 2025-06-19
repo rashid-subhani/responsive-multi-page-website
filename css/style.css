@@ -1,12 +1,30 @@
-:root{
-    --primary-color: #3498db;
-    --text-color: #333;
-    --padding: 1rem;
+/* Reset and base styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* css variables  */
+:root {
+  --primary-color: #0077b6;
+  --secondary-color: #023e8a;
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+
+  --font-family: Arial, Helvetica, sans-serif;;
+  --padding: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+
+  --border-radius: 8px;
 }
 body{
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
+    line-height: 1.6;
     color: var(--text-color);
+    background-color: var(--bg-color);
+    padding-top: 80px;
 }
 
 .navbar{
@@ -16,10 +34,80 @@ body{
     background-color: var(--primary-color);
     padding: var(--padding);
     color: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a{
-    color: white;
-    margin-left: 1rem;
+    color: var(--primary-color);
     text-decoration: none;
+}
+
+main{
+    padding: var(--padding);
+}
+
+.service-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.service-card{
+    flex: 1 1 250px;
+    border: 1px solid #ccc;
+    padding: var(--padding);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.3s ease;
+}
+
+.service-card:hover{
+    box-shadow: 0 0 10px rgba(0,0,0, 0.15);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+}
+
+input, textarea{
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+button{
+    background: var(--primary-color);
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #2980b9;
+}
+
+footer{
+    text-align: center;
+    padding: var(--padding);
+    background: #eee;
+}
+
+@media (max-width: 768px){
+    .navbar{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
 }
