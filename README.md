@@ -1,6 +1,12 @@
 # responsive-multi-page-website
 A fully responsive multi-page website using HTML and CSS (Flexbox &amp; CSS Variables). Includes Home, About, Services and Contact pages.
 
+# Live GitHub Pages Link
+https://rashid-subhani.github.io/responsive-multi-page-website/
+
+# GitHub Repository Link
+https://github.com/rashid-subhani/responsive-multi-page-website
+
 ## 📌 Features
 
 -  Fully responsive design (desktop, tablet, mobile)
