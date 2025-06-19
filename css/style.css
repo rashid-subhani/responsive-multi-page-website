@@ -1,113 +1,304 @@
-/* Reset and base styles */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* css variables  */
+/* css variables */
 :root {
   --primary-color: #0077b6;
   --secondary-color: #023e8a;
+  --accent-color: #48cae4;
   --bg-color: #f9f9f9;
   --text-color: #333;
 
-  --font-family: Arial, Helvetica, sans-serif;;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --padding: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2.5rem;
-
   --border-radius: 8px;
 }
-body{
-    font-family: var(--font-family);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    padding-top: 80px;
+
+/* reset & global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--primary-color);
-    padding: var(--padding);
-    color: white;
-    box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding-top: 80px;
 }
 
-nav a{
-    color: var(--primary-color);
-    text-decoration: none;
+nav a {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-main{
-    padding: var(--padding);
+a:hover {
+  color: var(--accent-color);
 }
 
-.service-container{
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: var(--padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav a {
+  margin-left: 1rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--padding);
+}
+
+.hero {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: var(--spacing-lg) var(--padding);
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: #fff;
+  color: var(--primary-color);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* sections */
+.section {
+  padding: var(--spacing-lg) var(--padding);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+/* card grid*/
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  flex: 1 1 280px;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* skills */
+.skills {
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+/* ==== About Page*/
+.about-content {
+  margin-bottom: var(--spacing-lg);
+}
+
+.bio h3 {
+  margin-bottom: 0.5rem;
+}
+
+.bio p {
+  margin-bottom: 1rem;
+}
+
+/* Services */
+
+.our-services{
+    text-align: center;
+    margin-top: 2rem;
+}
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.service-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  flex: 1 1 250px;
+  transition: transform 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Contact Page */
+.get-in-touch{
+    text-align: center;
     margin-top: 1rem;
 }
 
-.service-card{
-    flex: 1 1 250px;
-    border: 1px solid #ccc;
-    padding: var(--padding);
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: box-shadow 0.3s ease;
-}
-
-.service-card:hover{
-    box-shadow: 0 0 10px rgba(0,0,0, 0.15);
-}
-
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
-}
-
-input, textarea{
-    padding: 0.5rem;
-    width: 100%;
-    border: 1px solid #ccc;
-}
-
-button{
-    background: var(--primary-color);
-    color: white;
-    padding: 0.7rem;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover{
-    background: #2980b9;
-}
-
-footer{
+.send-me{
     text-align: center;
-    padding: var(--padding);
-    background: #eee;
 }
 
-@media (max-width: 768px){
-    .navbar{
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav a {
-        display: block;
-        margin: 0.5rem 0;
-    }
+form {
+  background-color: #fff;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: auto;
 }
+
+.form-group {
+  margin-bottom: 0.2rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-info {
+  max-width: 600px;
+  margin: var(--spacing-lg) auto;
+  background-color: #fff;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+}
+
+.contact-info h4 {
+  margin-bottom: 0.3rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--secondary-color);
+  color: #fff;
+  text-align: center;
+  padding: var(--padding);
+  margin-top: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar nav {
+    width: 100%;
+  }
+
+  .navbar nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .card-grid,
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .service-card {
+    width: 100%;
+    max-width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  form,
+  .contact-info {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
